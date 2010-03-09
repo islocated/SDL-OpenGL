@@ -9,6 +9,8 @@
 
 #include "PlayState.h"
 #include "Player.h"
+#include "Sprite.h"
+#include "Image.h"
 
 #include "Logger.h"
 
@@ -16,6 +18,11 @@ PlayState::PlayState(){
 	Sprite *spr = new Player();
 	
 	//AddChild will handle deletion of the object
+	addChild(spr);
+	
+	spr = new Sprite(100,100,16,32,true,true);
+	spr->setImage(new Image());
+	spr->getImage()->loadFile("g_walk_old.png");
 	addChild(spr);
 }
 

@@ -14,12 +14,14 @@
 
 Sprite::Sprite()
 : img(NULL), position(0,0), angle(0.0f), components(new vector<Component *>(0)), physicsComponent(NULL)
+, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0)
 {
 	
 }
 
 Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool reverse)
-: img(NULL), position(X, Y), m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0)
+: img(NULL), position(X, Y), angle(0.0f), components(new vector<Component *>(0)), physicsComponent(NULL)
+, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0)
 {
 	
 }
@@ -60,6 +62,14 @@ PhysicsComponent* Sprite::getPhysicsComponent(){
 	return physicsComponent;
 }
 
+void Sprite::setImage(Image * image){
+	this->img = image;
+}
+
+Image* Sprite::getImage(){
+	return this->img;
+}
+
 void Sprite::update(){
 	Component * component = NULL;
 	for(int i = 0; i < components->size(); i++){
@@ -75,6 +85,13 @@ void Sprite::update(){
 }
 
 void Sprite::render(){
+	if(!img){
+		return;
+	}
+	
+	glMatrixMode( GL_MODELVIEW ); 
+	glLoadIdentity();
+	
 	glTranslatef(position.x, position.y, 0);
 	
 	glRotatef(angle, 0.0f,0.0f,1.0f);	//Rotate the image on the Z axis

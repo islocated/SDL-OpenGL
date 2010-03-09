@@ -118,10 +118,7 @@ void Game::resetGL(){
 	
 	glEnable(GL_TEXTURE_2D);
 	glEnable (GL_BLEND); 
-	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		
-	glMatrixMode( GL_MODELVIEW ); 
-	glLoadIdentity(); 
+	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 		
 	glClearColor( 1, 0, 0, 1 ); 
 	glClear(GL_COLOR_BUFFER_BIT);

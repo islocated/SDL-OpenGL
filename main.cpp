@@ -2,8 +2,6 @@
 #include "State.h"
 #include "PlayState.h"
 
-void drawFrame();
-
 int main(int argc, char *argv[])
 {
 	Game g(1024, 640, false);

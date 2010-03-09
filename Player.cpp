@@ -10,13 +10,9 @@
 #include "Player.h"
 
 #include "Image.h"
-#include "Component.h"
 #include "BasicPhysicsComponent.h"
 #include "IO.h"
 #include "Logger.h"
-
-#include "SDL.h"
-
 
 Player::Player(){
 	m_frame = 2;
@@ -41,8 +37,8 @@ Player::~Player(){
 void Player::update(){
 	Sprite::update();
 	
-	if(IO::justPressed('a'))
-		getPhysicsComponent()->velocity.x -= .1;
+	if(IO::keyDown('a'))
+		getPhysicsComponent()->velocity.x = -.1;
 	if(IO::keyDown('d'))
 		getPhysicsComponent()->velocity.x = .1;
 	if(IO::keyDown('w'))

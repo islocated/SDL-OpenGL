@@ -32,6 +32,8 @@ public:
 	virtual PhysicsComponent* getPhysicsComponent();
 
 public:
+	virtual void setImage(Image * img);
+	virtual Image* getImage();
 	virtual void update();
 	virtual void render();
 	

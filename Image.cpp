@@ -119,6 +119,9 @@ void Image::render(){
 }
 
 void Image::render(int frame, int type, int facing, float width, float height){
+	if(!surface){
+		return;
+	}
 	
 	int maxFrameNo = surface->w/width;
 	if(frame >= maxFrameNo || frame < 0){
