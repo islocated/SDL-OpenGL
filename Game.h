@@ -9,6 +9,8 @@
 
 #pragma once
 
+#include "Timer.h"
+
 class State;
 class SDL_Surface;
 union SDL_Event;
@@ -36,6 +38,7 @@ protected:
 	
 	SDL_Surface * screen;
 	SDL_Event event;
+	Timer fps;
 	
 	State * m_state;
 	

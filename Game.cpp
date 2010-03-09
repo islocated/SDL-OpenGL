@@ -12,12 +12,17 @@
 #include "IO.h"
 #include "Audio.h"
 #include "Logger.h"
+#include "Timer.h"
 
 #include "SDL.h"
 #include "SDL_opengl.h"
 
+#include <string>
+#include <sstream>
+using namespace std;
+
 Game::Game(int width, int height, bool fullscreen=false)
-: m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen)
+: m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen), fps()
 {
 	initGame();
 	Audio::getInstance();
@@ -75,13 +80,41 @@ void Game::setState(State * state){
 }
 
 int Game::run(){
-	while(!quit){ 
+	while(!quit){
+		fps.start();
+		
+		ostringstream s;
+		s << fps.getTicks();
+		Logger::getInstance()->info("new");
+		Logger::getInstance()->info(s.str().c_str());
 		
 		handleAllEvents();
 		
 		update();
 		
 		render();
+		
+		s.str("");
+		s << fps.getTicks(); 
+		Logger::getInstance()->info(s.str().c_str());
+		Logger::getInstance()->info("before delay");
+		
+		//30 fps
+		//30frames/seconds
+		//1 frame * 1 second / 30 frame 
+		if(fps.secondsElapsed() < 1/20.0f){
+			Logger::getInstance()->info("delay");
+			s.str("");
+			s << (1/20.0f - fps.secondsElapsed()) * 1000; 
+			Logger::getInstance()->info(s.str().c_str());
+			
+			SDL_Delay((1/20.0f - fps.secondsElapsed()) * 1000);
+		}
+		s.str("");
+		s << fps.getTicks(); 
+		Logger::getInstance()->info(s.str().c_str());
+		Logger::getInstance()->info("after delay");
+		
 	}
 	
 	return true;

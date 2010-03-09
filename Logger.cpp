@@ -37,18 +37,18 @@ Logger * Logger::getInstance(){
 	return c_logger;
 }
 
-void Logger::debug(char * s){
+void Logger::debug(const char * s){
 	file << "DEBUG " << s << endl;
 }
 
-void Logger::info(char * s){
+void Logger::info(const char * s){
 	file << "INFO  " << s << endl;
 }
 
-void Logger::warn(char * s){
+void Logger::warn(const char * s){
 	file << "WARN  " << s << endl;
 }
 
-void Logger::error(char * s){
+void Logger::error(const char * s){
 	file << "ERROR " << s << endl;
 }

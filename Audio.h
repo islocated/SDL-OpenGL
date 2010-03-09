@@ -7,7 +7,10 @@
  *
  */
 
-#include "SDL_Mixer/SDL_Mixer.h"
+#pragma once
+
+//Forward declaration
+typedef struct _Mix_Music Mix_Music;
 
 class Audio
 {

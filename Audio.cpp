@@ -10,6 +10,8 @@
 #include "Audio.h"
 #include "Logger.h"
 
+#include "SDL_Mixer/SDL_Mixer.h"
+
 Audio * Audio::c_audio = NULL;
 
 Audio * Audio::getInstance(){
