@@ -11,35 +11,39 @@
 #include "Logger.h"
 
 Layer::Layer()
-: children(new vector<Sprite *>(0))
+: children(0)
 {
 
 }
 
 Layer::~Layer(){
 	Logger::getInstance()->debug("layer is destroyed");
-
-	if(children){
+	
+	if(!children.empty()){
 		Sprite *spr = NULL;
-		for(int i = 0; i < children->size(); i++){
-			spr = children->at(i);
+		for(int i = 0; i < children.size(); i++){
+			spr = children[i];
 			if(spr){
 				delete spr;
 			}
 		}
-		delete children;
-		children = NULL;
+		
+		children.erase(children.begin(), children.end());
 	}
 }
 
 void Layer::addChild(Sprite * sprite){
-	children->push_back(sprite);
+	children.push_back(sprite);
+}
+
+vector<Sprite *> Layer::getChildren(){
+	return children;
 }
 
 void Layer::update(){
 	Sprite *spr = NULL;
-	for(int i = 0; i < children->size(); i++){
-		spr = children->at(i);
+	for(int i = 0; i < children.size(); i++){
+		spr = children[i];
 		if(spr){
 			spr->update();
 		}
@@ -48,8 +52,8 @@ void Layer::update(){
 
 void Layer::render(){
 	Sprite *spr = NULL;
-	for(int i = 0; i < children->size(); i++){
-		spr = children->at(i);
+	for(int i = 0; i < children.size(); i++){
+		spr = children[i];
 		if(spr){
 			spr->render();
 		}

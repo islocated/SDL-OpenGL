@@ -9,10 +9,14 @@
 
 #include "PlayState.h"
 #include "Player.h"
+#include "Block.h"
 #include "Sprite.h"
 #include "Image.h"
-
+#include "Layer.h"
 #include "Logger.h"
+
+#include <vector>
+using namespace std;
 
 PlayState::PlayState(){
 	Sprite *spr = new Player();
@@ -24,12 +28,37 @@ PlayState::PlayState(){
 	spr->setImage(new Image());
 	spr->getImage()->loadFile("g_walk_old.png");
 	addChild(spr);
+	
+	spr = new Block(100,200);
+	addChild(spr);
 }
 
 PlayState::~PlayState(){
 	Logger::getInstance()->debug("playstate is destroyed");
 }
 
+void PlayState::update(){
+	State::update();
+	
+	handleCollisions();
+}
+
 void PlayState::render(){
 	State::render();
+}
+
+void PlayState::handleCollisions(){
+	vector<Sprite *> children = layer->getChildren();
+	
+	Sprite * spriteA = NULL;
+	Sprite * spriteB = NULL;
+	
+	for(int i = 0; i < children.size(); i++){
+		spriteA = children[i];
+		for(int j = i + 1; j < children.size(); j++){
+			spriteB = children[j];
+			
+			//spriteA->physicsComponent->collide(spriteB);
+		}
+	}
 }

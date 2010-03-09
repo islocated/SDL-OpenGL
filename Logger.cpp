@@ -18,6 +18,10 @@ Logger::Logger()
 }
 
 Logger::~Logger(){
+	
+}
+
+void Logger::destroy(){
 	debug("logger is destroyed");
 	
 	file << flush;

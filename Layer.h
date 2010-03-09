@@ -7,6 +7,8 @@
  *
  */
 
+#pragma once
+
 #include "Sprite.h"
 
 #include <vector>
@@ -19,9 +21,11 @@ public:
 	~Layer();
 	
 	void addChild(Sprite * sprite);
+	vector<Sprite *> getChildren();
+	
 	void render();
 	void update();
 
 protected:
-	vector<Sprite *> *children;
+	vector<Sprite *> children;
 };

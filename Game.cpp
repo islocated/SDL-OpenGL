@@ -10,6 +10,7 @@
 #include "Game.h"
 #include "State.h"
 #include "IO.h"
+#include "Audio.h"
 #include "Logger.h"
 
 #include "SDL.h"
@@ -19,6 +20,7 @@ Game::Game(int width, int height, bool fullscreen=false)
 : m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen)
 {
 	initGame();
+	Audio::getInstance();
 	IO::setEvent(&event);
 }
 
@@ -29,6 +31,9 @@ Game::~Game(){
 		delete m_state;
 		m_state = NULL;
 	}
+	
+	Audio::getInstance()->destroy();
+	Logger::getInstance()->destroy();
 	
 	SDL_Quit();
 }
@@ -106,6 +111,9 @@ void Game::handleEvent(){
 }
 
 void Game::update(){
+	
+	Audio::getInstance()->update();
+	
 	if(m_state){
 		m_state->update();
 	}

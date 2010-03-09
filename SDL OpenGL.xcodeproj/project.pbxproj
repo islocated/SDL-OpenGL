@@ -17,6 +17,9 @@
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 		B01DDEE811458FB400D9ADC0 /* Image.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B01DDEE711458FB400D9ADC0 /* Image.cpp */; };
 		B01DDF10114591F200D9ADC0 /* SDL_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B01DDF0F114591F200D9ADC0 /* SDL_image.framework */; };
+		B09C3A9E1146D8450060C078 /* Block.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09C3A9D1146D8450060C078 /* Block.cpp */; };
+		B09C3BB41146ED490060C078 /* Audio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09C3BB31146ED490060C078 /* Audio.cpp */; };
+		B09C3C001146F1540060C078 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09C3BFF1146F1540060C078 /* SDL_mixer.framework */; };
 		B0A6A69B1145E554006D6AA6 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A69A1145E554006D6AA6 /* Component.cpp */; };
 		B0A6A6A11145E600006D6AA6 /* BasicPhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A6A01145E600006D6AA6 /* BasicPhysicsComponent.cpp */; };
 		B0A6A7591145F646006D6AA6 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A7581145F646006D6AA6 /* IO.cpp */; };
@@ -61,6 +64,11 @@
 		B01DDEE611458FB400D9ADC0 /* Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Image.h; sourceTree = "<group>"; };
 		B01DDEE711458FB400D9ADC0 /* Image.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Image.cpp; sourceTree = "<group>"; };
 		B01DDF0F114591F200D9ADC0 /* SDL_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_image.framework; path = /Library/Frameworks/SDL_image.framework; sourceTree = "<absolute>"; };
+		B09C3A9C1146D8450060C078 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Block.h; sourceTree = "<group>"; };
+		B09C3A9D1146D8450060C078 /* Block.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Block.cpp; sourceTree = "<group>"; };
+		B09C3BB21146ED490060C078 /* Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Audio.h; sourceTree = "<group>"; };
+		B09C3BB31146ED490060C078 /* Audio.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Audio.cpp; sourceTree = "<group>"; };
+		B09C3BFF1146F1540060C078 /* SDL_mixer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL_mixer.framework; path = /Library/Frameworks/SDL_mixer.framework; sourceTree = "<absolute>"; };
 		B0A6A6991145E554006D6AA6 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		B0A6A69A1145E554006D6AA6 /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
 		B0A6A69F1145E600006D6AA6 /* BasicPhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPhysicsComponent.h; sourceTree = "<group>"; };
@@ -97,6 +105,7 @@
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				002F3C0109D093BD00EBEB88 /* OpenGL.framework in Frameworks */,
 				B01DDF10114591F200D9ADC0 /* SDL_image.framework in Frameworks */,
+				B09C3C001146F1540060C078 /* SDL_mixer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +124,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B09C3BFF1146F1540060C078 /* SDL_mixer.framework */,
 				B01DDF0F114591F200D9ADC0 /* SDL_image.framework */,
 				002F39F909D0881F00EBEB88 /* SDL.framework */,
 				002F3C6009D0951E00EBEB88 /* GLUT.framework */,
@@ -164,6 +174,8 @@
 				B0DBC1501145C5CD00855C81 /* Player.cpp */,
 				B0DEAEEE1145B7E3007C582B /* PlayState.h */,
 				B0DEAEEF1145B7E3007C582B /* PlayState.cpp */,
+				B09C3A9C1146D8450060C078 /* Block.h */,
+				B09C3A9D1146D8450060C078 /* Block.cpp */,
 			);
 			name = "Other Sources";
 			sourceTree = "<group>";
@@ -203,6 +215,8 @@
 				B0A6A7581145F646006D6AA6 /* IO.cpp */,
 				B0A6AC541146B3FC006D6AA6 /* Logger.h */,
 				B0A6AC551146B3FC006D6AA6 /* Logger.cpp */,
+				B09C3BB21146ED490060C078 /* Audio.h */,
+				B09C3BB31146ED490060C078 /* Audio.cpp */,
 			);
 			name = Engine;
 			sourceTree = "<group>";
@@ -299,6 +313,8 @@
 				B0A6AA8C1146A87E006D6AA6 /* Vector2d.cpp in Sources */,
 				B0A6AB761146AEE4006D6AA6 /* PhysicsComponent.cpp in Sources */,
 				B0A6AC561146B3FC006D6AA6 /* Logger.cpp in Sources */,
+				B09C3A9E1146D8450060C078 /* Block.cpp in Sources */,
+				B09C3BB41146ED490060C078 /* Audio.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

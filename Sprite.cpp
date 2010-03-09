@@ -13,14 +13,14 @@
 #include "Logger.h"
 
 Sprite::Sprite()
-: img(NULL), position(0,0), angle(0.0f), components(new vector<Component *>(0)), physicsComponent(NULL)
+: img(NULL), position(0,0), angle(0.0f), components(0), physicsComponent(NULL)
 , m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0)
 {
 	
 }
 
 Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool reverse)
-: img(NULL), position(X, Y), angle(0.0f), components(new vector<Component *>(0)), physicsComponent(NULL)
+: img(NULL), position(X, Y), angle(0.0f), components(0), physicsComponent(NULL)
 , m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0)
 {
 	
@@ -33,15 +33,15 @@ Sprite::~Sprite(){
 		img = NULL;
 	}
 	
-	if(components){
+	if(!components.empty()){
 		Component * component = NULL;
-		for(int i = 0; i < components->size(); i++){
-			component = components->at(i);
+		for(int i = 0; i < components.size(); i++){
+			component = components[i];
 			if(component){
 				delete component;
 			}
 		}
-		components = NULL;
+		components.erase(components.begin(), components.end());
 	}
 	
 	if(physicsComponent){
@@ -51,7 +51,7 @@ Sprite::~Sprite(){
 }
 
 void Sprite::addComponent(Component * component){
-	components->push_back(component);
+	components.push_back(component);
 }
 
 void Sprite::setPhysicsComponent(PhysicsComponent * physicsComponent){
@@ -72,8 +72,8 @@ Image* Sprite::getImage(){
 
 void Sprite::update(){
 	Component * component = NULL;
-	for(int i = 0; i < components->size(); i++){
-		component = components->at(i);
+	for(int i = 0; i < components.size(); i++){
+		component = components[i];
 		if(component){
 			component->update();
 		}

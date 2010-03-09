@@ -25,6 +25,6 @@ public:
 	virtual void update();
 	virtual void render();
 	
-private:
+protected:
 	Layer * layer;
 };

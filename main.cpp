@@ -1,6 +1,7 @@
 #include "Game.h"
 #include "State.h"
 #include "PlayState.h"
+#include "Audio.h"
 
 int main(int argc, char *argv[])
 {
@@ -10,6 +11,9 @@ int main(int argc, char *argv[])
 	
 	//Game will delete the state
 	g.setState(state);
+	
+	Audio::getInstance()->loadMusic("Epoq-Lepidoptera.ogg");
+	Audio::getInstance()->playMusic(0);
 	
 	g.run();
 	

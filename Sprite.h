@@ -39,7 +39,7 @@ public:
 	
 protected:
 	Image * img;
-	vector<Component *> *components;
+	vector<Component *> components;
 	PhysicsComponent * physicsComponent;
 	
 public:

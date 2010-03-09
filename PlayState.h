@@ -17,6 +17,9 @@ public:
 	PlayState();
 	virtual ~PlayState();
 	
+	void handleCollisions();
+	
+	void update();
 	void render();
 	
 private:

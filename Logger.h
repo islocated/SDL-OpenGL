@@ -14,6 +14,7 @@ class Logger
 public:
 	static Logger * getInstance();
 	
+	void destroy();
 	void debug(char * s);
 	void info(char * s);
 	void warn(char * s);

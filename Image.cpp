@@ -118,6 +118,9 @@ void Image::render(){
 	glEnd();
 }
 
+//TODO: We need to figure out a way to render the same textures together
+//The idea is to have all the sprites render, which only marks that it should
+//And then the textures will render based on texture types
 void Image::render(int frame, int type, int facing, float width, float height){
 	if(!surface){
 		return;
@@ -129,28 +132,30 @@ void Image::render(int frame, int type, int facing, float width, float height){
 	}
 	
 	int maxTypeNo = surface->h/height;
-	if(type >= maxFrameNo || type < 0){
+	if(type >= maxTypeNo || type < 0){
 		return;
 	}
 	
 	float frameDivision = width/surface->w;
 	float typeDivision = height/surface->h;
 	
-	//TODO:We can potentially have frame to be too big
 	float x = frameDivision * frame;
 	float y = typeDivision * type;
 	float x2 = x + frameDivision;
 	float y2 = y + typeDivision;
 	
+	//Flips the horizontal thus reversing the image
 	if(facing){
 		x = x2;
 		x2 = frameDivision * frame;
 	}
 	
+	//TODO: This is expensive, need to draw all objects of same texture first
 	glBindTexture( GL_TEXTURE_2D, texture );
 	
 	glBegin( GL_QUADS );
 
+	//Texture maps based on frame, vertex maps based on dimension of sprite
 	glTexCoord2f( x, y ); glVertex3f( 0.0f, 0.0f, 0.0f );
 	glTexCoord2f( x2, y ); glVertex3f( width, 0.0f, 0.f );
 	glTexCoord2f( x2, y2 ); glVertex3f( width, height, 0.f );
