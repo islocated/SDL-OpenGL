@@ -37,14 +37,25 @@ Player::~Player(){
 void Player::update(){
 	Sprite::update();
 	
-	if(IO::keyDown('a'))
+	getPhysicsComponent()->velocity.x = 0;
+	getPhysicsComponent()->velocity.y = 0;
+	
+	if(IO::keyDown('a')){
+		m_facing = 1;
 		getPhysicsComponent()->velocity.x = -.1;
-	if(IO::keyDown('d'))
+	}
+	
+	if(IO::keyDown('d')){
+		m_facing = 0;
 		getPhysicsComponent()->velocity.x = .1;
-	if(IO::keyDown('w'))
+	}
+	
+	if(IO::keyDown('w')){
 		getPhysicsComponent()->velocity.y = -.1;
-	if(IO::keyDown('s'))
+	}
+	if(IO::keyDown('s')){
 		getPhysicsComponent()->velocity.y = .1;
+	}
 	
 	if(IO::keyDown('r'))
 		angle += 20 * 3.14/180;
@@ -56,7 +67,7 @@ void Player::update(){
 	if(IO::keyDown('2'))
 		m_frame = 2;
 	if(IO::keyDown('3'))
-		m_facing = 0;
+		m_frame = 3;
 	if(IO::keyDown('4'))
-		m_facing = 1;
+		m_frame = 4;
 }

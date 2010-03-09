@@ -25,6 +25,8 @@ PlayState::PlayState(){
 	addChild(spr);
 	
 	spr = new Sprite(100,100,16,32,true,true);
+	spr->m_scale.x = 5.0f;
+	spr->m_scale.y = 5.0f;
 	spr->setImage(new Image());
 	spr->getImage()->loadFile("g_walk_old.png");
 	addChild(spr);

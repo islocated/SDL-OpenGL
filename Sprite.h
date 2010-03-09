@@ -44,6 +44,7 @@ protected:
 	
 public:
 	Vector2d position;
+	Vector2d m_scale;
 	float angle;
 	
 	float m_width;

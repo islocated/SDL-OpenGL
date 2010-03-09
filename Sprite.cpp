@@ -14,14 +14,14 @@
 
 Sprite::Sprite()
 : img(NULL), position(0,0), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0)
+, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0), m_scale(1,1)
 {
 	
 }
 
 Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool reverse)
 : img(NULL), position(X, Y), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0)
+, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0), m_scale(1,1)
 {
 	
 }
@@ -93,6 +93,7 @@ void Sprite::render(){
 	glLoadIdentity();
 	
 	glTranslatef(position.x, position.y, 0);
+	glScalef(m_scale.x, m_scale.y, 1.0f);
 	
 	glRotatef(angle, 0.0f,0.0f,1.0f);	//Rotate the image on the Z axis
 	
