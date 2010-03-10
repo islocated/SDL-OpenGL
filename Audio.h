@@ -9,8 +9,12 @@
 
 #pragma once
 
+#include <map>
+using namespace std;
+
 //Forward declaration
 typedef struct _Mix_Music Mix_Music;
+struct Mix_Chunk;
 
 class Audio
 {
@@ -21,6 +25,7 @@ public:
 	void freeMusic();
 	void loadMusic(char * file);
 	void playMusic(int loops);
+	void playSound(char * file, int loops);
 	
 	virtual void update();
 	virtual void destroy();
@@ -32,4 +37,6 @@ private:
 	static Audio* c_audio;
 	
 	Mix_Music* m_music;
+	
+	map<char *, Mix_Chunk*> m_sounds;
 };

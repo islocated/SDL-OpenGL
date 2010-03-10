@@ -15,6 +15,8 @@ int main(int argc, char *argv[])
 	Audio::getInstance()->loadMusic("Epoq-Lepidoptera.ogg");
 	Audio::getInstance()->playMusic(0);
 	
+	Audio::getInstance()->playSound("chicken.wav", 1);
+	
 	g.run();
 	
 	return 0;

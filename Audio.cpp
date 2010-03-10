@@ -24,7 +24,7 @@ Audio * Audio::getInstance(){
 }
 
 Audio::Audio()
-: m_music(NULL)
+: m_music(NULL), m_sounds()
 {
 	int frequency = 22050;
 	Uint16 format = AUDIO_S16; /* 16-bit stereo */
@@ -46,6 +46,16 @@ Audio::~Audio()
 
 void Audio::destroy(){
 	Logger::getInstance()->debug("audio is destroyed");
+	
+	for(map<char*, Mix_Chunk*>::iterator it = m_sounds.begin(); it != m_sounds.end(); ++it){
+		Logger::getInstance()->debug("destroying");
+		Logger::getInstance()->debug(it->first);
+		Mix_FreeChunk(it->second);
+	}
+	
+	m_sounds.clear();
+	
+	freeMusic();
 	
 	Mix_CloseAudio();
 }
@@ -75,5 +85,16 @@ void Audio::onMusicFinish(){
 	Mix_HaltMusic();
 	Mix_FreeMusic(getInstance()->m_music);
 	getInstance()->m_music = NULL;
+}
+
+void Audio::playSound(char * file, int loops){
+	if(!m_sounds[file]){
+		m_sounds[file] = Mix_LoadWAV(file);
+	}
+	
+	int error = 0;
+	error = Mix_PlayChannel(-1, m_sounds[file], loops);
+	
+	int x = 5;
 }
 
