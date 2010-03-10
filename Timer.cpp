@@ -22,7 +22,7 @@ Timer::~Timer(){
 }
 
 int Timer::getTicks(){
-	return SDL_GetTicks();
+	return SDL_GetTicks() - m_startTick;
 }
 
 void Timer::start(){

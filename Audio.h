@@ -15,7 +15,8 @@ typedef struct _Mix_Music Mix_Music;
 class Audio
 {
 public:
-	static Audio * getInstance();
+	static Audio* getInstance();
+	static void onMusicFinish();
 	
 	void freeMusic();
 	void loadMusic(char * file);
@@ -28,7 +29,7 @@ private:
 	Audio();
 	~Audio();
 	
-	static Audio * c_audio;
+	static Audio* c_audio;
 	
-	Mix_Music * m_music;
+	Mix_Music* m_music;
 };

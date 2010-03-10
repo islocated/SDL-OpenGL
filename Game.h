@@ -29,6 +29,8 @@ public:
 	virtual void update();
 	virtual void render();
 	
+	static const int FRAMES_PER_SECOND = 20;
+	
 protected:
 	int quit;
 	
@@ -38,11 +40,15 @@ protected:
 	
 	SDL_Surface * screen;
 	SDL_Event event;
-	Timer fps;
 	
 	State * m_state;
 	
 	void resetGL();
 	void handleAllEvents();
+	
+private:
+	Timer fps;
+	Timer display;
+	int m_frame;
 	
 };

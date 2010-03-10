@@ -22,7 +22,8 @@
 using namespace std;
 
 Game::Game(int width, int height, bool fullscreen=false)
-: m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen), fps()
+: m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen)
+, fps(), display(), m_frame(0)
 {
 	initGame();
 	Audio::getInstance();
@@ -80,13 +81,12 @@ void Game::setState(State * state){
 }
 
 int Game::run(){
+	//FPS timers
+	stringstream caption;
+	fps.start();
+	display.start();
+	
 	while(!quit){
-		fps.start();
-		
-		ostringstream s;
-		s << fps.getTicks();
-		Logger::getInstance()->info("new");
-		Logger::getInstance()->info(s.str().c_str());
 		
 		handleAllEvents();
 		
@@ -94,27 +94,16 @@ int Game::run(){
 		
 		render();
 		
-		s.str("");
-		s << fps.getTicks(); 
-		Logger::getInstance()->info(s.str().c_str());
-		Logger::getInstance()->info("before delay");
+		m_frame++;
 		
-		//30 fps
-		//30frames/seconds
-		//1 frame * 1 second / 30 frame 
-		if(fps.secondsElapsed() < 1/20.0f){
-			Logger::getInstance()->info("delay");
-			s.str("");
-			s << (1/20.0f - fps.secondsElapsed()) * 1000; 
-			Logger::getInstance()->info(s.str().c_str());
+		//Display FPS once a second
+		if(display.getTicks() >= 1000){
+			display.start();
 			
-			SDL_Delay((1/20.0f - fps.secondsElapsed()) * 1000);
+			caption.str("");
+			caption << m_frame << " " << fps.getTicks()/1000.0f << " " << m_frame/(fps.getTicks()/1000.0f) << " FPS";
+			SDL_WM_SetCaption(caption.str().c_str(), NULL);
 		}
-		s.str("");
-		s << fps.getTicks(); 
-		Logger::getInstance()->info(s.str().c_str());
-		Logger::getInstance()->info("after delay");
-		
 	}
 	
 	return true;

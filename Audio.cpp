@@ -28,7 +28,7 @@ Audio::Audio()
 {
 	int frequency = 22050;
 	Uint16 format = AUDIO_S16; /* 16-bit stereo */
-	int channels = 2;
+	int channels = 2;	//1 = mono, 2 = stereo
 	int chunkSize = 4096;
 	
 	int error;
@@ -68,4 +68,12 @@ void Audio::loadMusic(char * file){
 
 void Audio::playMusic(int loops){
 	Mix_PlayMusic(m_music, loops);
+	Mix_HookMusicFinished(onMusicFinish);
 }
+
+void Audio::onMusicFinish(){
+	Mix_HaltMusic();
+	Mix_FreeMusic(getInstance()->m_music);
+	getInstance()->m_music = NULL;
+}
+

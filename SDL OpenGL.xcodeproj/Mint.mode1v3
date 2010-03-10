@@ -202,24 +202,33 @@
 			<key>Content</key>
 			<dict>
 				<key>PBXProjectModuleGUID</key>
-				<string>B09C3D6F1147066B0060C078</string>
+				<string>B09C3E5D114751590060C078</string>
 				<key>PBXProjectModuleLabel</key>
-				<string>Game.cpp</string>
+				<string>Audio.h</string>
 				<key>PBXSplitModuleInNavigatorKey</key>
 				<dict>
 					<key>Split0</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
-						<string>B09C3D701147066B0060C078</string>
+						<string>B09C3E5E114751590060C078</string>
 						<key>PBXProjectModuleLabel</key>
-						<string>Game.cpp</string>
+						<string>Audio.h</string>
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B09C3D991147085C0060C078</string>
+						<string>B09C3E8B114753E70060C078</string>
 						<key>history</key>
 						<array>
-							<string>B09C3D67114706060060C078</string>
+							<string>B09C3E89114753E70060C078</string>
+							<string>B09C3E86114753BE0060C078</string>
+						</array>
+						<key>prevStack</key>
+						<array>
+							<string>B09C3E6B114751F40060C078</string>
+							<string>B09C3E6C114751F40060C078</string>
+							<string>B09C3E7E114753940060C078</string>
+							<string>B09C3E7F114753940060C078</string>
+							<string>B09C3E8A114753E70060C078</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,50 +265,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B09C3D9A1147085C0060C078</string>
+						<string>B09C3E8C114753E70060C078</string>
 						<key>history</key>
 						<array>
 							<string>B09C3D2D114702AC0060C078</string>
-						</array>
-					</dict>
-					<key>SplitCount</key>
-					<string>1</string>
-				</dict>
-				<key>StatusBarVisibility</key>
-				<true/>
-			</dict>
-			<key>Geometry</key>
-			<dict>
-				<key>Frame</key>
-				<string>{{0, 20}, {761, 672}}</string>
-				<key>PBXModuleWindowStatusBarHidden2</key>
-				<false/>
-				<key>RubberWindowFrame</key>
-				<string>15 60 761 713 0 0 1280 778 </string>
-			</dict>
-		</dict>
-		<dict>
-			<key>Content</key>
-			<dict>
-				<key>PBXProjectModuleGUID</key>
-				<string>B09C3D3A114702B90060C078</string>
-				<key>PBXProjectModuleLabel</key>
-				<string>Game.h</string>
-				<key>PBXSplitModuleInNavigatorKey</key>
-				<dict>
-					<key>Split0</key>
-					<dict>
-						<key>PBXProjectModuleGUID</key>
-						<string>B09C3D3B114702B90060C078</string>
-						<key>PBXProjectModuleLabel</key>
-						<string>Game.h</string>
-						<key>_historyCapacity</key>
-						<integer>0</integer>
-						<key>bookmark</key>
-						<string>B09C3D9B1147085C0060C078</string>
-						<key>history</key>
-						<array>
-							<string>B09C3D2B1147028C0060C078</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -336,7 +305,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B09C3D9C1147085C0060C078</string>
+						<string>B09C3E8D114753E70060C078</string>
 						<key>history</key>
 						<array>
 							<string>B09C3B7C1146E3980060C078</string>
@@ -376,7 +345,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B09C3D9D1147085C0060C078</string>
+						<string>B09C3E8E114753E70060C078</string>
 						<key>history</key>
 						<array>
 							<string>B09C3B261146E21C0060C078</string>
@@ -416,7 +385,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>B09C3D9E1147085C0060C078</string>
+						<string>B09C3E8F114753E70060C078</string>
 						<key>history</key>
 						<array>
 							<string>B09C3B221146E1F10060C078</string>
@@ -518,14 +487,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>17</integer>
+									<integer>33</integer>
 									<integer>15</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 159}, {312, 660}}</string>
+							<string>{{0, 197}, {312, 660}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -562,7 +531,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Logger.h</string>
+								<string>Audio.cpp</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -570,11 +539,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>Logger.h</string>
+										<string>Audio.cpp</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>B09C3D981147085C0060C078</string>
+										<string>B09C3E88114753E70060C078</string>
 										<key>history</key>
 										<array>
 											<string>B0DEAF611145BB08007C582B</string>
@@ -596,35 +565,36 @@
 											<string>B09C3B291146E2C20060C078</string>
 											<string>B09C3B2C1146E2C20060C078</string>
 											<string>B09C3B901146EC670060C078</string>
-											<string>B09C3BBB1146EE990060C078</string>
 											<string>B09C3BBC1146EE990060C078</string>
-											<string>B09C3BBE1146EE990060C078</string>
 											<string>B09C3BC01146EE990060C078</string>
-											<string>B09C3BC21146EE990060C078</string>
-											<string>B09C3BC31146EE990060C078</string>
 											<string>B09C3C881146F9B90060C078</string>
 											<string>B09C3C891146F9B90060C078</string>
-											<string>B09C3C9E1146FA4E0060C078</string>
 											<string>B09C3CB31146FAAC0060C078</string>
-											<string>B09C3CB41146FAAC0060C078</string>
-											<string>B09C3CCA1146FD560060C078</string>
-											<string>B09C3CCE1146FD560060C078</string>
 											<string>B09C3CCF1146FD560060C078</string>
 											<string>B09C3CD21146FD560060C078</string>
-											<string>B09C3CF41146FE2D0060C078</string>
-											<string>B09C3CF51146FE2D0060C078</string>
 											<string>B09C3CF61146FE2D0060C078</string>
-											<string>B09C3D09114702180060C078</string>
 											<string>B09C3D0A114702180060C078</string>
 											<string>B09C3D0C114702180060C078</string>
-											<string>B09C3D43114704800060C078</string>
-											<string>B09C3D44114704800060C078</string>
 											<string>B09C3D45114704800060C078</string>
 											<string>B09C3D46114704800060C078</string>
 											<string>B09C3D47114704800060C078</string>
-											<string>B09C3D6A1147066B0060C078</string>
 											<string>B09C3D6B1147066B0060C078</string>
-											<string>B09C3CD01146FD560060C078</string>
+											<string>B09C3DAB114713780060C078</string>
+											<string>B09C3DAC114713780060C078</string>
+											<string>B09C3DAD114713780060C078</string>
+											<string>B09C3DAE114713780060C078</string>
+											<string>B09C3DAF114713780060C078</string>
+											<string>B09C3DB0114713780060C078</string>
+											<string>B09C3DB1114713780060C078</string>
+											<string>B09C3DB2114713780060C078</string>
+											<string>B09C3DB3114713780060C078</string>
+											<string>B09C3DB4114713780060C078</string>
+											<string>B09C3DB5114713780060C078</string>
+											<string>B09C3DB6114713780060C078</string>
+											<string>B09C3E3311474EE60060C078</string>
+											<string>B09C3E421147505F0060C078</string>
+											<string>B09C3E59114751590060C078</string>
+											<string>B09C3E5A114751590060C078</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -1020,6 +990,34 @@
 											<string>B09C3D53114704800060C078</string>
 											<string>B09C3D6C1147066B0060C078</string>
 											<string>B09C3D6D1147066B0060C078</string>
+											<string>B09C3DB8114713780060C078</string>
+											<string>B09C3DB9114713780060C078</string>
+											<string>B09C3DBA114713780060C078</string>
+											<string>B09C3DBB114713780060C078</string>
+											<string>B09C3DBC114713780060C078</string>
+											<string>B09C3DBD114713780060C078</string>
+											<string>B09C3DBE114713780060C078</string>
+											<string>B09C3DBF114713780060C078</string>
+											<string>B09C3DC0114713780060C078</string>
+											<string>B09C3DC1114713780060C078</string>
+											<string>B09C3DC2114713780060C078</string>
+											<string>B09C3DC3114713780060C078</string>
+											<string>B09C3DC4114713780060C078</string>
+											<string>B09C3DD0114713DD0060C078</string>
+											<string>B09C3DD1114713DD0060C078</string>
+											<string>B09C3DD2114713DD0060C078</string>
+											<string>B09C3DE4114714490060C078</string>
+											<string>B09C3DE5114714490060C078</string>
+											<string>B09C3DED114714750060C078</string>
+											<string>B09C3DEE114714750060C078</string>
+											<string>B09C3DEF114714750060C078</string>
+											<string>B09C3E09114715AE0060C078</string>
+											<string>B09C3E0A114715AE0060C078</string>
+											<string>B09C3E3511474EE60060C078</string>
+											<string>B09C3E3611474EE60060C078</string>
+											<string>B09C3E441147505F0060C078</string>
+											<string>B09C3E501147512D0060C078</string>
+											<string>B09C3E5B114751590060C078</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -1220,11 +1218,10 @@
 		<string>B09C3B5E1146E2C20060C078</string>
 		<string>B09C3A721146D5C00060C078</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>B09C3D3A114702B90060C078</string>
 		<string>B09C3D37114702B90060C078</string>
-		<string>/Users/Mint/Documents/SDL-OpenGL/SDL OpenGL.xcodeproj</string>
 		<string>B01DDEAD1145865F00D9ADC0</string>
-		<string>B09C3D6F1147066B0060C078</string>
+		<string>B09C3E5D114751590060C078</string>
+		<string>/Users/Mint/Documents/SDL-OpenGL/SDL OpenGL.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 59 1280 719 0 0 1280 778 </string>
@@ -1248,7 +1245,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Game.cpp</string>
+								<string>Audio.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
