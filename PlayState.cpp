@@ -36,7 +36,7 @@ PlayState::PlayState(){
 }
 
 PlayState::~PlayState(){
-	Logger::getInstance()->debug("playstate is destroyed");
+	Logger::getInstance()->debug() << "playstate is destroyed";
 }
 
 void PlayState::update(){

@@ -19,7 +19,7 @@ BasicPhysicsComponent::BasicPhysicsComponent(Sprite * sprite)
 }
 
 BasicPhysicsComponent::~BasicPhysicsComponent(){
-	Logger::getInstance()->debug("basic physics component is destroyed");
+	Logger::getInstance()->debug() << "basic physics component is destroyed";
 }
 
 void BasicPhysicsComponent::update(){

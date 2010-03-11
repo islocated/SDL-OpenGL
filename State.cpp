@@ -15,7 +15,7 @@ State::State(){
 }
 
 State::~State(){
-	Logger::getInstance()->debug("state is destroyed");
+	Logger::getInstance()->debug() << "state is destroyed";
 	
 	if(layer){
 		delete layer;

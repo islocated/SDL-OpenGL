@@ -21,7 +21,7 @@ PhysicsComponent::PhysicsComponent(Sprite * sprite)
 
 
 PhysicsComponent::~PhysicsComponent(){
-	Logger::getInstance()->debug("physics component is destroyed");
+	Logger::getInstance()->debug() << "physics component is destroyed";
 }
 
 void PhysicsComponent::update(){

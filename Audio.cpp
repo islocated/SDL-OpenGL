@@ -33,7 +33,7 @@ Audio::Audio()
 	
 	int error;
 	if(error = Mix_OpenAudio(frequency, format, channels, chunkSize)){
-		Logger::getInstance()->error("Unable to open Audio");
+		Logger::getInstance()->error() << "Unable to open Audio";
 	}
 	
 	//Mix_QuerySpec(&frequency, &format, &channels);
@@ -45,11 +45,10 @@ Audio::~Audio()
 }
 
 void Audio::destroy(){
-	Logger::getInstance()->debug("audio is destroyed");
+	Logger::getInstance()->debug() << "audio is destroyed";
 	
 	for(map<char*, Mix_Chunk*>::iterator it = m_sounds.begin(); it != m_sounds.end(); ++it){
-		Logger::getInstance()->debug("destroying");
-		Logger::getInstance()->debug(it->first);
+		Logger::getInstance()->debug() << "destroying " << it->first;
 		Mix_FreeChunk(it->second);
 	}
 	
@@ -92,9 +91,11 @@ void Audio::playSound(char * file, int loops){
 		m_sounds[file] = Mix_LoadWAV(file);
 	}
 	
-	int error = 0;
-	error = Mix_PlayChannel(-1, m_sounds[file], loops);
+	int channel = 0;
+	channel = Mix_PlayChannel(-1, m_sounds[file], loops);
 	
-	int x = 5;
+	if(channel < 0){
+		Logger::getInstance()->error() << "sound effect could not be played";
+	}
 }
 

@@ -31,7 +31,7 @@ Player::Player(){
 }
 
 Player::~Player(){
-	Logger::getInstance()->debug("player is destroyed");
+	Logger::getInstance()->debug() << "player is destroyed";
 }
 
 void Player::update(){

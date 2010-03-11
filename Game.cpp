@@ -31,7 +31,7 @@ Game::Game(int width, int height, bool fullscreen=false)
 }
 
 Game::~Game(){
-	Logger::getInstance()->debug("game is destroyed");
+	Logger::getInstance()->debug() << "game is destroyed";
 	
 	if(m_state){
 		delete m_state;
@@ -58,7 +58,7 @@ int Game::initGame(){
 	
 	screen = SDL_SetVideoMode(m_width, m_height, 32, flags); 
 	if(!screen){
-		Logger::getInstance()->error("Bad screen");
+		Logger::getInstance()->error() << "Bad screen";
 		return -1;
 	}
 	

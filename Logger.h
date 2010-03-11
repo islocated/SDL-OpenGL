@@ -15,10 +15,11 @@ public:
 	static Logger * getInstance();
 	
 	void destroy();
-	void debug(const char * s);
-	void info(const char * s);
-	void warn(const char * s);
-	void error(const char * s);
+	
+	ofstream& debug();
+	ofstream& info();
+	ofstream& warn();
+	ofstream& error();
 	
 private:
 	Logger();

@@ -22,7 +22,7 @@ Logger::~Logger(){
 }
 
 void Logger::destroy(){
-	debug("logger is destroyed");
+	debug() << "logger is destroyed";
 	
 	file << flush;
 	file.close();
@@ -37,18 +37,22 @@ Logger * Logger::getInstance(){
 	return c_logger;
 }
 
-void Logger::debug(const char * s){
-	file << "DEBUG " << s << endl;
+ofstream& Logger::debug(){
+	file << endl << "DEBUG ";
+	return file;
 }
 
-void Logger::info(const char * s){
-	file << "INFO  " << s << endl;
+ofstream& Logger::info(){
+	file << endl << "INFO  ";
+	return file;
 }
 
-void Logger::warn(const char * s){
-	file << "WARN  " << s << endl;
+ofstream& Logger::warn(){
+	file << endl << "WARN  ";
+	return file;
 }
 
-void Logger::error(const char * s){
-	file << "ERROR " << s << endl;
+ofstream& Logger::error(){
+	file << endl << "ERROR ";
+	return file;
 }

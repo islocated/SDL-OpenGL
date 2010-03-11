@@ -27,7 +27,7 @@ Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool 
 }
 
 Sprite::~Sprite(){
-	Logger::getInstance()->debug("sprite is destroyed");
+	Logger::getInstance()->debug() << "sprite is destroyed";
 	if(img){
 		delete img;
 		img = NULL;

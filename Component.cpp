@@ -18,7 +18,7 @@ Component::Component(Sprite * sprite)
 }
 
 Component::~Component(){
-	Logger::getInstance()->debug("component is destroyed");
+	Logger::getInstance()->debug() << "component is destroyed";
 	
 	//Do not delete owner, they are responsible for this themselves
 	if(owner){

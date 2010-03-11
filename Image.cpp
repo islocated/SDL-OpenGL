@@ -19,7 +19,7 @@ Image::Image()
 }
 
 Image::~Image(){
-	Logger::getInstance()->debug("image is destroyed");
+	Logger::getInstance()->debug() << "image is destroyed";
 	
 	destroy();
 }
@@ -87,7 +87,7 @@ void Image::createTexture(){
 		else
 			texture_format = GL_BGR;
 	} else {
-		Logger::getInstance()->warn("warning: the image is not truecolor..  this will probably break");
+		Logger::getInstance()->warn() << "warning: the image is not truecolor..  this will probably break";
 	}
 	
 	// Have OpenGL generate a texture object handle for us

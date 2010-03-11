@@ -17,7 +17,7 @@ Layer::Layer()
 }
 
 Layer::~Layer(){
-	Logger::getInstance()->debug("layer is destroyed");
+	Logger::getInstance()->debug() << "layer is destroyed";
 	
 	if(!children.empty()){
 		Sprite *spr = NULL;
