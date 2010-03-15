@@ -23,7 +23,7 @@ using namespace std;
 
 Game::Game(int width, int height, bool fullscreen=false)
 : m_width(width), m_height(height), screen(NULL), quit(false), m_state(NULL), m_fullscreen(fullscreen)
-, fps(), display(), m_frame(0)
+, fps(), display(), delta(), m_frame(0)
 {
 	initGame();
 	Audio::getInstance();
@@ -86,11 +86,15 @@ int Game::run(){
 	fps.start();
 	display.start();
 	
+	//Game Timer
+	delta.start();
+	
 	while(!quit){
 		
 		handleAllEvents();
 		
-		update();
+		update(delta.getTicks());
+		delta.start();
 		
 		render();
 		
@@ -132,12 +136,12 @@ void Game::handleEvent(){
 	}
 }
 
-void Game::update(){
+void Game::update(Uint32 dt){
 	
-	Audio::getInstance()->update();
+	Audio::getInstance()->update(dt);
 	
 	if(m_state){
-		m_state->update();
+		m_state->update(dt);
 	}
 }
 

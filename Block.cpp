@@ -26,7 +26,7 @@ Block::~Block(){
 	
 }
 
-void Block::update(){
-	Sprite::update();
+void Block::update(Uint32 dt){
+	Sprite::update(dt);
 }
 

@@ -20,7 +20,7 @@ public:
 	PhysicsComponent(Sprite * owner);
 	virtual ~PhysicsComponent();
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 	
 public:
 	Vector2d position;

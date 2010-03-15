@@ -15,5 +15,5 @@ public:
 	Block(int X, int Y);
 	~Block();
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 };

@@ -26,6 +26,6 @@ Component::~Component(){
 	}
 }
 
-void Component::update(){
+void Component::update(Uint32 dt){
 	
 }

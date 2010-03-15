@@ -20,9 +20,9 @@ public:
 	BasicPhysicsComponent(Sprite * sprite);
 	virtual ~BasicPhysicsComponent();
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 
 protected:
-	virtual void updateAngle();
-	virtual void updatePosition();
+	virtual void updateAngle(Uint32 dt);
+	virtual void updatePosition(Uint32 dt);
 };

@@ -21,7 +21,7 @@ Timer::~Timer(){
 	
 }
 
-int Timer::getTicks(){
+Uint32 Timer::getTicks(){
 	return SDL_GetTicks() - m_startTick;
 }
 

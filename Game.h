@@ -26,7 +26,7 @@ public:
 	virtual void handleEvent();
 	
 	virtual int run();
-	virtual void update();
+	virtual void update(Uint32 dt);
 	virtual void render();
 	
 	static const int FRAMES_PER_SECOND = 20;
@@ -49,6 +49,7 @@ protected:
 private:
 	Timer fps;
 	Timer display;
+	Timer delta;
 	int m_frame;
 	
 };

@@ -24,7 +24,7 @@ public:
 	vector<Sprite *> getChildren();
 	
 	void render();
-	void update();
+	void update(Uint32 dt);
 
 protected:
 	vector<Sprite *> children;

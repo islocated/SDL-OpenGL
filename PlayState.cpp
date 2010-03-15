@@ -24,6 +24,7 @@ PlayState::PlayState(){
 	//AddChild will handle deletion of the object
 	addChild(spr);
 	
+	/*
 	spr = new Sprite(100,100,16,32,true,true);
 	spr->m_scale.x = 5.0f;
 	spr->m_scale.y = 5.0f;
@@ -33,14 +34,15 @@ PlayState::PlayState(){
 	
 	spr = new Block(100,200);
 	addChild(spr);
+	*/
 }
 
 PlayState::~PlayState(){
 	Logger::getInstance()->debug() << "playstate is destroyed";
 }
 
-void PlayState::update(){
-	State::update();
+void PlayState::update(Uint32 dt){
+	State::update(dt);
 	
 	handleCollisions();
 }

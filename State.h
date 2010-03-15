@@ -22,7 +22,7 @@ public:
 	
 	void addChild(Sprite * sprite);
 
-	virtual void update();
+	virtual void update(Uint32 dt);
 	virtual void render();
 	
 protected:

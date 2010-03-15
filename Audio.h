@@ -27,7 +27,7 @@ public:
 	void playMusic(int loops);
 	void playSound(char * file, int loops);
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 	virtual void destroy();
 	
 private:

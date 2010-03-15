@@ -11,19 +11,18 @@
 #include "Image.h"
 #include "Component.h"
 #include "Logger.h"
+#include "Animation.h"
 
 Sprite::Sprite()
 : img(NULL), position(0,0), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0), m_scale(1,1)
+, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0), m_scale(1,1), animations(), m_key(NULL)
 {
-	
 }
 
 Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool reverse)
 : img(NULL), position(X, Y), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0), m_scale(1,1)
+, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0), m_scale(1,1), animations(), m_key(NULL)
 {
-	
 }
 
 Sprite::~Sprite(){
@@ -48,6 +47,27 @@ Sprite::~Sprite(){
 		delete physicsComponent;
 		physicsComponent = NULL;
 	}
+	
+	//Map automatically becomes not empty if we used it once to check if an element is there or not
+	if(!animations.empty()){
+		Animation* animation = NULL;
+		for(map<char*, Animation*>::iterator it = animations.begin(); it != animations.end(); ++it){
+			Logger::getInstance()->debug() << "destroying " << it->first;
+			animation = it->second;
+			delete animation;
+		}
+		
+		animations.clear();
+	}
+}
+
+void Sprite::addAnimation(char* key, Animation* animation){
+	animations[key] = animation;
+}
+
+void Sprite::playAnimation(char* key){
+	m_key = key;
+	//animations[m_key]->reset();
 }
 
 void Sprite::addComponent(Component * component){
@@ -70,17 +90,21 @@ Image* Sprite::getImage(){
 	return this->img;
 }
 
-void Sprite::update(){
+void Sprite::update(Uint32 dt){
 	Component * component = NULL;
 	for(int i = 0; i < components.size(); i++){
 		component = components[i];
 		if(component){
-			component->update();
+			component->update(dt);
 		}
 	}
 	
 	if(physicsComponent){
-		physicsComponent->update();
+		physicsComponent->update(dt);
+	}
+	
+	if(m_key && animations[m_key]){
+		animations[m_key]->update(dt);
 	}
 }
 
@@ -99,6 +123,10 @@ void Sprite::render(){
 	
 	
 	if(m_animated){
+		if(m_key && animations[m_key]){
+			m_frame = animations[m_key]->getCurrentFrame();
+		}
+		
 		img->render(m_frame, m_type, m_facing, m_width, m_height);
 	}
 	else{

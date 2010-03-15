@@ -24,6 +24,6 @@ PhysicsComponent::~PhysicsComponent(){
 	Logger::getInstance()->debug() << "physics component is destroyed";
 }
 
-void PhysicsComponent::update(){
+void PhysicsComponent::update(Uint32 dt){
 	
 }

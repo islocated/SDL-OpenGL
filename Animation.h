@@ -7,8 +7,24 @@
  *
  */
 
+#include <vector>
+using namespace std;
+
 class Animation
 {
 public:
-	int frames[];
+	Animation();
+	Animation(int numFrames, int* frames, float duration, bool loop);
+	
+	void update(Uint32 dt);
+	int getCurrentFrame();
+	void reset();
+	
+	vector<int> m_frames;
+	int m_numFrames;
+	int m_currentFrame;
+	float m_frameDuration;
+	float m_frameDt;
+	
+	bool m_loop;
 };

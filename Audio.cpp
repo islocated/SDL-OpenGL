@@ -59,7 +59,7 @@ void Audio::destroy(){
 	Mix_CloseAudio();
 }
 
-void Audio::update(){
+void Audio::update(Uint32 dt){
 	
 }
 

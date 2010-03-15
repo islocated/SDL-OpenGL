@@ -16,9 +16,9 @@ public:
 	~Timer();
 	
 	void start();
-	int getTicks();
+	Uint32 getTicks();
 	float secondsElapsed();
 	
 private:
-	int m_startTick;
+	Uint32 m_startTick;
 };

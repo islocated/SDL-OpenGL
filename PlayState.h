@@ -19,7 +19,7 @@ public:
 	
 	void handleCollisions();
 	
-	void update();
+	void update(Uint32 dt);
 	void render();
 	
 private:

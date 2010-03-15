@@ -19,5 +19,5 @@ public:
 	Player();
 	virtual ~Player();
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 };

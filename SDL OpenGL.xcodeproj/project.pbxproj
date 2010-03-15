@@ -22,6 +22,7 @@
 		B09C3C001146F1540060C078 /* SDL_mixer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09C3BFF1146F1540060C078 /* SDL_mixer.framework */; };
 		B09C3CF01146FDD50060C078 /* Animation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09C3CEF1146FDD50060C078 /* Animation.cpp */; };
 		B09C3D081146FE420060C078 /* Timer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09C3D071146FE420060C078 /* Timer.cpp */; };
+		B09C40F9114DCC090060C078 /* AnimationComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B09C40F8114DCC090060C078 /* AnimationComponent.cpp */; };
 		B0A6A69B1145E554006D6AA6 /* Component.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A69A1145E554006D6AA6 /* Component.cpp */; };
 		B0A6A6A11145E600006D6AA6 /* BasicPhysicsComponent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A6A01145E600006D6AA6 /* BasicPhysicsComponent.cpp */; };
 		B0A6A7591145F646006D6AA6 /* IO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B0A6A7581145F646006D6AA6 /* IO.cpp */; };
@@ -75,6 +76,8 @@
 		B09C3CEF1146FDD50060C078 /* Animation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Animation.cpp; sourceTree = "<group>"; };
 		B09C3D061146FE420060C078 /* Timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Timer.h; sourceTree = "<group>"; };
 		B09C3D071146FE420060C078 /* Timer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timer.cpp; sourceTree = "<group>"; };
+		B09C40F7114DCC090060C078 /* AnimationComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationComponent.h; sourceTree = "<group>"; };
+		B09C40F8114DCC090060C078 /* AnimationComponent.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AnimationComponent.cpp; sourceTree = "<group>"; };
 		B0A6A6991145E554006D6AA6 /* Component.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Component.h; sourceTree = "<group>"; };
 		B0A6A69A1145E554006D6AA6 /* Component.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Component.cpp; sourceTree = "<group>"; };
 		B0A6A69F1145E600006D6AA6 /* BasicPhysicsComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicPhysicsComponent.h; sourceTree = "<group>"; };
@@ -240,6 +243,8 @@
 				B0A6A6A01145E600006D6AA6 /* BasicPhysicsComponent.cpp */,
 				B0A6AB741146AEE4006D6AA6 /* PhysicsComponent.h */,
 				B0A6AB751146AEE4006D6AA6 /* PhysicsComponent.cpp */,
+				B09C40F7114DCC090060C078 /* AnimationComponent.h */,
+				B09C40F8114DCC090060C078 /* AnimationComponent.cpp */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -327,6 +332,7 @@
 				B09C3BB41146ED490060C078 /* Audio.cpp in Sources */,
 				B09C3CF01146FDD50060C078 /* Animation.cpp in Sources */,
 				B09C3D081146FE420060C078 /* Timer.cpp in Sources */,
+				B09C40F9114DCC090060C078 /* AnimationComponent.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

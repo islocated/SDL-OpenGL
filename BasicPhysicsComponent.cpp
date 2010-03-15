@@ -22,23 +22,25 @@ BasicPhysicsComponent::~BasicPhysicsComponent(){
 	Logger::getInstance()->debug() << "basic physics component is destroyed";
 }
 
-void BasicPhysicsComponent::update(){
-	PhysicsComponent::update();
+void BasicPhysicsComponent::update(Uint32 dt){
+	PhysicsComponent::update(dt);
 	
-	updateAngle();
-	updatePosition();
+	updateAngle(dt);
+	updatePosition(dt);
 }
 
-void BasicPhysicsComponent::updateAngle(){
+void BasicPhysicsComponent::updateAngle(Uint32 dt){
 	
 }
 
-void BasicPhysicsComponent::updatePosition(){
-	velocity.x += acceleration.x;
-	velocity.y += acceleration.y;
+void BasicPhysicsComponent::updatePosition(Uint32 dt){
+	float elapsed = dt/1000.0f;
 	
-	position.x += velocity.x;
-	position.y += velocity.y;
+	velocity.x += acceleration.x * elapsed;
+	velocity.y += acceleration.y * elapsed;
+	
+	position.x += velocity.x * elapsed;
+	position.y += velocity.y * elapsed;
 	
 	owner->position.x = position.x;
 	owner->position.y = position.y;

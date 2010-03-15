@@ -27,8 +27,8 @@ void State::addChild(Sprite * sprite){
 	layer->addChild(sprite);
 }
 
-void State::update(){
-	layer->update();
+void State::update(Uint32 dt){
+	layer->update(dt);
 }
 
 void State::render(){

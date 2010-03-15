@@ -40,12 +40,12 @@ vector<Sprite *> Layer::getChildren(){
 	return children;
 }
 
-void Layer::update(){
+void Layer::update(Uint32 dt){
 	Sprite *spr = NULL;
 	for(int i = 0; i < children.size(); i++){
 		spr = children[i];
 		if(spr){
-			spr->update();
+			spr->update(dt);
 		}
 	}
 }

@@ -18,7 +18,7 @@ public:
 	Component(Sprite * owner);
 	virtual ~Component();
 	
-	virtual void update();
+	virtual void update(Uint32 dt);
 
 protected:
 	Sprite * owner;
