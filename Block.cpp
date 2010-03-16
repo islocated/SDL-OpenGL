@@ -18,7 +18,7 @@ Block::Block(int X, int Y)
 	img = new Image();
 	img->loadFile("block.png");
 	
-	PhysicsComponent * physicsComponent = new BasicPhysicsComponent(this);
+	PhysicsComponent* physicsComponent = new BasicPhysicsComponent(this);
 	physicsComponent->acceleration.y = 0;
 }
 

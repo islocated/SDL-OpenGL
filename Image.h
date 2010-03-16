@@ -20,7 +20,7 @@ public:
 	Image();
 	virtual ~Image();
 	
-	int loadFile(char * filename);
+	int loadFile(char* filename);
 	void render();
 	void render(int frame, int type, int facing, float width, float height);
 
@@ -33,7 +33,7 @@ private:
 	int getHeight();
 	
 private:
-	SDL_Surface *surface;
+	SDL_Surface* surface;
 	
 	GLuint texture;
 	GLenum texture_format;

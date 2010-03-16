@@ -20,11 +20,11 @@ public:
 	State();
 	virtual ~State();
 	
-	void addChild(Sprite * sprite);
+	void addChild(Sprite* sprite);
 
 	virtual void update(Uint32 dt);
 	virtual void render();
 	
 protected:
-	Layer * layer;
+	Layer* layer;
 };

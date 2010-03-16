@@ -21,7 +21,7 @@ public:
 	virtual ~Game();
 	
 	virtual int initGame();
-	void setState(State * state);
+	void setState(State* state);
 	
 	virtual void handleEvent();
 	
@@ -38,10 +38,10 @@ protected:
 	int m_height;
 	bool m_fullscreen;
 	
-	SDL_Surface * screen;
+	SDL_Surface* screen;
 	SDL_Event event;
 	
-	State * m_state;
+	State* m_state;
 	
 	void resetGL();
 	void handleAllEvents();

@@ -29,20 +29,20 @@ public:
 	virtual ~Sprite();
 	
 public:
-	virtual void addComponent(Component * component);
-	virtual void setPhysicsComponent(PhysicsComponent * physicsComponent);
+	virtual void addComponent(Component* component);
+	virtual void setPhysicsComponent(PhysicsComponent* physicsComponent);
 	virtual PhysicsComponent* getPhysicsComponent();
 
 public:
-	virtual void setImage(Image * img);
+	virtual void setImage(Image* img);
 	virtual Image* getImage();
 	virtual void update(Uint32 dt);
 	virtual void render();
 	
 protected:
-	Image * img;
-	vector<Component *> components;
-	PhysicsComponent * physicsComponent;
+	Image* img;
+	vector<Component*> components;
+	PhysicsComponent* physicsComponent;
 	
 public:
 	Vector2d position;
@@ -55,10 +55,10 @@ public:
 	bool m_animated;
 	bool m_reverse;
 	int m_facing;
-	map<char *, Animation*> animations;
+	map<char*, Animation*> animations;
 	
 	virtual void addAnimation(char* key, Animation* animation);
-	virtual void playAnimation(char* key);
+	virtual void playAnimation(char* key, bool reset=false);
 	
 	//Current animation 
 	char* m_key;

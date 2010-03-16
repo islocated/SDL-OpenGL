@@ -25,11 +25,11 @@ public:
 	static bool keyDown(char c);
 	static bool keyUp(char c);
 	
-	static void setEvent(SDL_Event * event);
-	static SDL_Event * getEvent();
+	static void setEvent(SDL_Event* event);
+	static SDL_Event* getEvent();
 	
 public:
-	static SDL_Event * c_event;
+	static SDL_Event* c_event;
 	
 	static map<int, bool> c_keys;
 };

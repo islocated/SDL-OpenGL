@@ -12,7 +12,7 @@ using namespace std;
 class Logger
 {
 public:
-	static Logger * getInstance();
+	static Logger* getInstance();
 	
 	void destroy();
 	
@@ -26,5 +26,5 @@ private:
 	~Logger();
 	ofstream file;
 	
-	static Logger * c_logger;
+	static Logger* c_logger;
 };

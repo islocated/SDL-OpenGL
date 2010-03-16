@@ -20,12 +20,12 @@ public:
 	Layer();
 	~Layer();
 	
-	void addChild(Sprite * sprite);
-	vector<Sprite *> getChildren();
+	void addChild(Sprite* sprite);
+	vector<Sprite*> getChildren();
 	
 	void render();
 	void update(Uint32 dt);
 
 protected:
-	vector<Sprite *> children;
+	vector<Sprite*> children;
 };

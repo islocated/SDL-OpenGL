@@ -12,9 +12,9 @@
 
 #include "SDL_Mixer/SDL_Mixer.h"
 
-Audio * Audio::c_audio = NULL;
+Audio* Audio::c_audio = NULL;
 
-Audio * Audio::getInstance(){
+Audio* Audio::getInstance(){
 	if(c_audio){
 		return c_audio;
 	}
@@ -70,7 +70,7 @@ void Audio::freeMusic(){
 	}
 }
 
-void Audio::loadMusic(char * file){
+void Audio::loadMusic(char* file){
 	freeMusic();
 	m_music = Mix_LoadMUS(file);
 }
@@ -86,7 +86,7 @@ void Audio::onMusicFinish(){
 	getInstance()->m_music = NULL;
 }
 
-void Audio::playSound(char * file, int loops){
+void Audio::playSound(char* file, int loops){
 	if(!m_sounds[file]){
 		m_sounds[file] = Mix_LoadWAV(file);
 	}

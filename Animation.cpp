@@ -10,13 +10,13 @@
 #include "Animation.h"
 
 Animation::Animation()
-: m_numFrames(0), m_currentFrame(0), m_frames(), m_frameDuration(0.0f), m_frameDt(0), m_loop(true)
+: m_numFrames(0), m_currentFrame(0), m_frames(), m_frameDuration(0.0f), m_frameDt(0), m_loop(true), m_row(0)
 {
 	
 }
 
-Animation::Animation(int numFrames, int* frames, float duration, bool loop=true)
-: m_numFrames(numFrames), m_currentFrame(0), m_frames(), m_frameDuration(duration), m_frameDt(0), m_loop(loop)
+Animation::Animation(int numFrames, int* frames, int row, float duration, bool loop)
+: m_numFrames(numFrames), m_currentFrame(0), m_frames(), m_frameDuration(duration), m_frameDt(0), m_loop(loop), m_row(row)
 {
 	for(int i = 0; i < numFrames; i++){
 		m_frames.push_back(frames[i]);
@@ -38,6 +38,10 @@ void Animation::update(Uint32 dt){
 
 int Animation::getCurrentFrame(){
 	return m_frames[m_currentFrame];
+}
+
+int Animation::getRow(){
+	return m_row;
 }
 
 void Animation::reset(){

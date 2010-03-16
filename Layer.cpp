@@ -20,7 +20,7 @@ Layer::~Layer(){
 	Logger::getInstance()->debug() << "layer is destroyed";
 	
 	if(!children.empty()){
-		Sprite *spr = NULL;
+		Sprite* spr = NULL;
 		for(int i = 0; i < children.size(); i++){
 			spr = children[i];
 			if(spr){
@@ -32,16 +32,16 @@ Layer::~Layer(){
 	}
 }
 
-void Layer::addChild(Sprite * sprite){
+void Layer::addChild(Sprite* sprite){
 	children.push_back(sprite);
 }
 
-vector<Sprite *> Layer::getChildren(){
+vector<Sprite*> Layer::getChildren(){
 	return children;
 }
 
 void Layer::update(Uint32 dt){
-	Sprite *spr = NULL;
+	Sprite* spr = NULL;
 	for(int i = 0; i < children.size(); i++){
 		spr = children[i];
 		if(spr){
@@ -51,7 +51,7 @@ void Layer::update(Uint32 dt){
 }
 
 void Layer::render(){
-	Sprite *spr = NULL;
+	Sprite* spr = NULL;
 	for(int i = 0; i < children.size(); i++){
 		spr = children[i];
 		if(spr){

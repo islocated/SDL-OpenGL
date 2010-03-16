@@ -23,7 +23,7 @@ State::~State(){
 	}
 }
 
-void State::addChild(Sprite * sprite){
+void State::addChild(Sprite* sprite){
 	layer->addChild(sprite);
 }
 

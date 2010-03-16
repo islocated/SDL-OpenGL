@@ -46,7 +46,7 @@ Game::~Game(){
 
 int Game::initGame(){
 	int error;
-	error = SDL_Init( SDL_INIT_EVERYTHING ); 
+	error = SDL_Init(SDL_INIT_EVERYTHING); 
 	
 	SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
 	
@@ -71,7 +71,7 @@ int Game::initGame(){
 	return error;
 }
 
-void Game::setState(State * state){
+void Game::setState(State* state){
 	if(m_state){
 		delete m_state;
 		m_state = NULL;
@@ -122,7 +122,7 @@ void Game::handleAllEvents(){
 
 void Game::handleEvent(){
 	//If the user has Xed out the window 
-	if( event.type == SDL_QUIT ) { 
+	if(event.type == SDL_QUIT) { 
 		quit = true; 
 	}
 	else if(event.type == SDL_KEYDOWN){
@@ -146,7 +146,7 @@ void Game::update(Uint32 dt){
 }
 
 void Game::resetGL(){
-	glMatrixMode( GL_PROJECTION ); 
+	glMatrixMode(GL_PROJECTION); 
 	glLoadIdentity(); 
 	glOrtho(0, m_width, m_height, 0, -1, 1 ); 
 	
@@ -154,7 +154,7 @@ void Game::resetGL(){
 	glEnable (GL_BLEND); 
 	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA); 
 		
-	glClearColor( 1, 0, 0, 1 ); 
+	glClearColor(1, 0, 0, 1); 
 	glClear(GL_COLOR_BUFFER_BIT);
 }
 
@@ -167,4 +167,3 @@ void Game::render(){
 	
 	SDL_GL_SwapBuffers();
 }
-

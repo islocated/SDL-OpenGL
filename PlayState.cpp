@@ -19,7 +19,7 @@
 using namespace std;
 
 PlayState::PlayState(){
-	Sprite *spr = new Player();
+	Sprite* spr = new Player();
 	
 	//AddChild will handle deletion of the object
 	addChild(spr);
@@ -54,8 +54,8 @@ void PlayState::render(){
 void PlayState::handleCollisions(){
 	vector<Sprite *> children = layer->getChildren();
 	
-	Sprite * spriteA = NULL;
-	Sprite * spriteB = NULL;
+	Sprite* spriteA = NULL;
+	Sprite* spriteB = NULL;
 	
 	for(int i = 0; i < children.size(); i++){
 		spriteA = children[i];

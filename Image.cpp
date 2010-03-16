@@ -31,12 +31,12 @@ void Image::destroy(){
 	}
 	
 	if(texture){
-		glDeleteTextures( 1, &texture );
+		glDeleteTextures(1, &texture);
 		texture = NULL;
 	}
 }
 
-int Image::loadFile(char * filename){
+int Image::loadFile(char* filename){
 	destroy();
 	
 	surface = IMG_Load(filename);
@@ -91,29 +91,29 @@ void Image::createTexture(){
 	}
 	
 	// Have OpenGL generate a texture object handle for us
-	glGenTextures( 1, &texture );
+	glGenTextures(1, &texture);
 	
 	// Bind the texture object
-	glBindTexture( GL_TEXTURE_2D, texture );
+	glBindTexture(GL_TEXTURE_2D, texture);
 	
 	// Set the texture's stretching properties
-	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-	glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	
 	// Edit the texture object's image data using the information SDL_Surface gives us
-	glTexImage2D( GL_TEXTURE_2D, 0, nOfColors, surface->w, surface->h, 0,
-				 texture_format, GL_UNSIGNED_BYTE, surface->pixels );
+	glTexImage2D(GL_TEXTURE_2D, 0, nOfColors, surface->w, surface->h, 0,
+				 texture_format, GL_UNSIGNED_BYTE, surface->pixels);
 }
 
 void Image::render(){
-	glBindTexture( GL_TEXTURE_2D, texture );
+	glBindTexture(GL_TEXTURE_2D, texture);
 	
-	glBegin( GL_QUADS );
+	glBegin(GL_QUADS);
 	
-	glTexCoord2i( 0, 0 ); glVertex3f( 0.0f, 0.0f, 0.0f );
-	glTexCoord2i( 1, 0 ); glVertex3f( surface->w, 0.0f, 0.f );
-	glTexCoord2i( 1, 1 ); glVertex3f( surface->w, surface->h, 0.f );
-	glTexCoord2i( 0, 1 ); glVertex3f( 0.0f, surface->h, 0.f );
+	glTexCoord2i(0, 0); glVertex3f(0.0f, 0.0f, 0.0f);
+	glTexCoord2i(1, 0); glVertex3f(surface->w, 0.0f, 0.f);
+	glTexCoord2i(1, 1); glVertex3f(surface->w, surface->h, 0.f);
+	glTexCoord2i(0, 1); glVertex3f(0.0f, surface->h, 0.f);
 
 	glEnd();
 }
@@ -151,15 +151,15 @@ void Image::render(int frame, int type, int facing, float width, float height){
 	}
 	
 	//TODO: This is expensive, need to draw all objects of same texture first
-	glBindTexture( GL_TEXTURE_2D, texture );
+	glBindTexture(GL_TEXTURE_2D, texture);
 	
-	glBegin( GL_QUADS );
+	glBegin(GL_QUADS);
 
 	//Texture maps based on frame, vertex maps based on dimension of sprite
-	glTexCoord2f( x, y ); glVertex3f( 0.0f, 0.0f, 0.0f );
-	glTexCoord2f( x2, y ); glVertex3f( width, 0.0f, 0.f );
-	glTexCoord2f( x2, y2 ); glVertex3f( width, height, 0.f );
-	glTexCoord2f( x, y2 ); glVertex3f( 0.0f, height, 0.f );
+	glTexCoord2f(x, y); glVertex3f(0.0f, 0.0f, 0.0f);
+	glTexCoord2f(x2, y); glVertex3f(width, 0.0f, 0.f);
+	glTexCoord2f(x2, y2); glVertex3f(width, height, 0.f);
+	glTexCoord2f(x, y2); glVertex3f(0.0f, height, 0.f);
 	
 	glEnd();
 }

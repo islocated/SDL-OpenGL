@@ -15,13 +15,15 @@
 
 Sprite::Sprite()
 : img(NULL), position(0,0), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0), m_type(0), m_scale(1,1), animations(), m_key(NULL)
+, m_width(0), m_height(0), m_animated(false), m_reverse(false), m_facing(0), m_frame(0)
+, m_type(0), m_scale(1,1), animations(), m_key(NULL)
 {
 }
 
 Sprite::Sprite(float X, float Y, float width, float height, bool animated, bool reverse)
 : img(NULL), position(X, Y), angle(0.0f), components(0), physicsComponent(NULL)
-, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0), m_frame(0), m_type(0), m_scale(1,1), animations(), m_key(NULL)
+, m_width(width), m_height(height), m_animated(animated), m_reverse(reverse), m_facing(0) 
+, m_frame(0), m_type(0), m_scale(1,1), animations(), m_key(NULL)
 {
 }
 
@@ -33,7 +35,7 @@ Sprite::~Sprite(){
 	}
 	
 	if(!components.empty()){
-		Component * component = NULL;
+		Component* component = NULL;
 		for(int i = 0; i < components.size(); i++){
 			component = components[i];
 			if(component){
@@ -65,16 +67,19 @@ void Sprite::addAnimation(char* key, Animation* animation){
 	animations[key] = animation;
 }
 
-void Sprite::playAnimation(char* key){
+void Sprite::playAnimation(char* key, bool reset){
 	m_key = key;
-	//animations[m_key]->reset();
+	
+	if(reset){
+		animations[m_key]->reset();
+	}
 }
 
-void Sprite::addComponent(Component * component){
+void Sprite::addComponent(Component* component){
 	components.push_back(component);
 }
 
-void Sprite::setPhysicsComponent(PhysicsComponent * physicsComponent){
+void Sprite::setPhysicsComponent(PhysicsComponent* physicsComponent){
 	this->physicsComponent = physicsComponent;
 }
 
@@ -82,7 +87,7 @@ PhysicsComponent* Sprite::getPhysicsComponent(){
 	return physicsComponent;
 }
 
-void Sprite::setImage(Image * image){
+void Sprite::setImage(Image* image){
 	this->img = image;
 }
 
@@ -91,7 +96,7 @@ Image* Sprite::getImage(){
 }
 
 void Sprite::update(Uint32 dt){
-	Component * component = NULL;
+	Component* component = NULL;
 	for(int i = 0; i < components.size(); i++){
 		component = components[i];
 		if(component){
@@ -113,18 +118,18 @@ void Sprite::render(){
 		return;
 	}
 	
-	glMatrixMode( GL_MODELVIEW ); 
+	glMatrixMode(GL_MODELVIEW); 
 	glLoadIdentity();
 	
-	glTranslatef(position.x, position.y, 0);
+	glTranslatef(position.x, position.y, 0.0f);
 	glScalef(m_scale.x, m_scale.y, 1.0f);
 	
-	glRotatef(angle, 0.0f,0.0f,1.0f);	//Rotate the image on the Z axis
-	
+	glRotatef(angle, 0.0f, 0.0f, 1.0f);	//Rotate the image on the Z axis
 	
 	if(m_animated){
 		if(m_key && animations[m_key]){
 			m_frame = animations[m_key]->getCurrentFrame();
+			m_type = animations[m_key]->getRow();
 		}
 		
 		img->render(m_frame, m_type, m_facing, m_width, m_height);

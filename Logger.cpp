@@ -9,7 +9,7 @@
 
 #include "Logger.h"
 
-Logger * Logger::c_logger = NULL;
+Logger* Logger::c_logger = NULL;
 
 Logger::Logger()
 : file("logfile.txt") //, ios::app)
@@ -28,7 +28,7 @@ void Logger::destroy(){
 	file.close();
 }
 
-Logger * Logger::getInstance(){
+Logger* Logger::getInstance(){
 	if(c_logger){
 		return c_logger;
 	}

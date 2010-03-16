@@ -25,20 +25,20 @@ Player::Player(){
 	img = new Image();
 	img->loadFile("g_walk_old.png");
 	
-	PhysicsComponent * physicsComponent = new BasicPhysicsComponent(this);
-	//physicsComponent->acceleration.y = 100;
+	PhysicsComponent* physicsComponent = new BasicPhysicsComponent(this);
+	physicsComponent->acceleration.y = 100;
 	
 	//Components handle deletion of the components later
 	setPhysicsComponent(physicsComponent);
 	
 	int idle[] = {0};
-	addAnimation("idle", new Animation(1, idle, 1.0f, true));
+	addAnimation("idle", new Animation(1, idle, 0, 1.0f, true));
 	
 	int walk[] = {1,2,3,4,5};
-	addAnimation("walk", new Animation(5, walk, .5f, true));
+	addAnimation("walk", new Animation(5, walk, 0, .5f, true));
 	
 	int jump[] = {1};
-	addAnimation("jump", new Animation(1, jump, 1.0f, true));
+	addAnimation("jump", new Animation(1, jump, 0, 1.0f, true));
 	
 	playAnimation("jump");
 }
@@ -74,8 +74,6 @@ void Player::update(Uint32 dt){
 	else{
 		playAnimation("idle");
 	}
-	
-	
 	
 	if(IO::keyDown('r'))
 		angle += 20 * 3.14/180;

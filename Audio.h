@@ -23,9 +23,9 @@ public:
 	static void onMusicFinish();
 	
 	void freeMusic();
-	void loadMusic(char * file);
+	void loadMusic(char* file);
 	void playMusic(int loops);
-	void playSound(char * file, int loops);
+	void playSound(char* file, int loops);
 	
 	virtual void update(Uint32 dt);
 	virtual void destroy();
@@ -38,5 +38,5 @@ private:
 	
 	Mix_Music* m_music;
 	
-	map<char *, Mix_Chunk*> m_sounds;
+	map<char*, Mix_Chunk*> m_sounds;
 };

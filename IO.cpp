@@ -24,11 +24,11 @@ IO::~IO(){
 	
 }
 
-void IO::setEvent(SDL_Event * event){
+void IO::setEvent(SDL_Event* event){
 	c_event = event;
 }
 
-SDL_Event * IO::getEvent(){
+SDL_Event* IO::getEvent(){
 	return c_event;
 }
 
