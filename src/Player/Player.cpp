@@ -23,7 +23,7 @@ Player::Player(){
 	m_height = 32.0f;
 	
 	img = new Image();
-	img->loadFile("g_walk_old.png");
+	img->loadFile("Resources/g_walk_old.png");
 	
 	PhysicsComponent* physicsComponent = new BasicPhysicsComponent(this);
 	physicsComponent->acceleration.y = 100;

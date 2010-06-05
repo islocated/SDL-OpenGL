@@ -1,0 +1,21 @@
+
+DEBUG game is destroyed
+DEBUG playstate is destroyed
+DEBUG state is destroyed
+DEBUG layer is destroyed
+DEBUG player is destroyed
+DEBUG sprite is destroyed
+DEBUG image is destroyed
+DEBUG basic physics component is destroyed
+DEBUG physics component is destroyed
+DEBUG component is destroyed
+DEBUG destroying idle
+DEBUG destroying walk
+DEBUG destroying jump
+DEBUG sprite is destroyed
+DEBUG image is destroyed
+DEBUG sprite is destroyed
+DEBUG image is destroyed
+DEBUG audio is destroyed
+DEBUG destroying chicken.wav
+DEBUG logger is destroyed

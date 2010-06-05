@@ -16,7 +16,7 @@ Block::Block(int X, int Y)
 : Sprite(X, Y, 0, 0, false, false)
 {
 	img = new Image();
-	img->loadFile("block.png");
+	img->loadFile("Resources/block.png");
 	
 	PhysicsComponent* physicsComponent = new BasicPhysicsComponent(this);
 	physicsComponent->acceleration.y = 0;
